@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 
+    <bean id="e1" class="MavenJdbcExample.Employee.Spring.Employee">
+        <property name="empid" value="101"/>
+        <property name="name" value="Riya"/>
+        <property name="department" value="Marketing"/>
+        <property name="salary" value="20000"/>
+        <property name="c1" ref="ci1"></property>
+    </bean>
+    
+    <bean id="e2" class="MavenJdbcExample.Employee.Spring.Employee">
+         <constructor-arg  index="0" value="102"/>
+          <constructor-arg  index="1" value="Priya"/>
+          <constructor-arg  index="2" value="Finance"/>
+          <constructor-arg  index="3" value="40000"/>
+          
+     
+</bean>
+ <bean id="ci1" class="MavenJdbcExample.Employee.Spring.Contactinfo">
+ <property name="phno"  value="9342581251"/>
+ 
+ <property name="email"  value="riya123@gmail.com"/>
+ 
+ <property name="LinkedIn"  value="riyaalinkk.com"/>
+ 
+</bean>
+</beans>
+
+

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- Address Bean "aa1" -->
+    <bean id="aa1" class="MavenJdbcExample.SpringExample.Address">
+        <property name="hno" value="301"/>
+        <property name="city" value="Pune"/>
+        <property name="pcode" value="21109"/>
+
+        <property name="stateList">
+            <list>
+                <value>TN</value>
+                <value>Kerala</value>
+            </list>
+        </property>
+
+        <property name="zone">
+            <map>
+                <entry key="South" value="Chennai"/>
+                <entry key="West" value="Mumbai"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- Address Bean "university" -->
+    <bean id="university" class="MavenJdbcExample.SpringExample.Address">
+        <property name="hno" value="456"/>
+        <property name="city" value="Delhi"/>
+        <property name="pcode" value="110001"/>
+        <property name="stateList">
+            <list>
+                <value>Delhi</value>
+                <value>Uttar Pradesh</value>
+            </list>
+        </property>
+        <property name="zone">
+            <map>
+                <entry key="north" value="Delhi"/>
+                <entry key="south" value="Noida"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- Student Bean "s1" with Address injection -->
+    <bean id="s1" class="MavenJdbcExample.SpringExample.Student">
+        <property name="rollno" value="101"/>
+        <property name="name" value="Ajay"/>
+        <property name="fee" value="2000"/>
+        <!-- Injecting "aa1" Address -->
+        <property name="a1" ref="aa1"/>
+    </bean>
+
+</beans>
